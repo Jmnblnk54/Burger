@@ -1,13 +1,30 @@
 // Set up MySQL connection.
-var mysql = require("mysql");
+const mysql = require("mysql");
+const dotenv = require("dotenv");
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "Yana5624!",
-  database: "burger_db"
-});
+//set password to mySQL DB
+dotenv.config();
+const sqlPass = process.env.secret
+
+//Connection information for the sql database
+if(process.env.JAWSDB_URL){
+  connection = mysql.createConnection(process.env.JAWSDB_URL)
+}else{
+    const connection = mysql.createConnection({
+    host: "localhost",
+
+    // Your port; if not 8080
+    port: 8080,
+
+    // Your username
+    user: "root",
+
+    // Your password
+    password: sqlPass,
+    database: "burgers_db"
+  });
+}
+
 
 // Make connection.
 connection.connect(function(err) {
