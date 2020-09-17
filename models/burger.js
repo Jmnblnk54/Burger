@@ -1,10 +1,10 @@
 // Import the ORM to create functions that will interact with the database.
-const orm = require("../config/orm.js").default;
-const connection = require("../config/connection");
+const orm = require("../config/orm.js");
+// const connection = require("../config/connection");
 
 let burger = {
   all: function(cb) {
-    orm.all("burgers", function(res) {
+    orm.selectAll("burgers", function(res) {
       cb(res);
     });
   },

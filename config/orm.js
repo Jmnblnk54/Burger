@@ -3,7 +3,7 @@ const connection = require("./connection.js");
 
 function printQuestionMarks(num) {
   let arr = [];
-  for (var i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     arr.push("?");
   }
   return arr.toString();
@@ -14,7 +14,7 @@ function objToSql(ob) {
   let arr = [];
 
   // loop through the keys and push the key/value as a string int arr
-  for (var key in ob) {
+  for (let key in ob) {
     let value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
@@ -61,7 +61,7 @@ const orm = {
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
-  update: function(table, objColVals, condition, cb) {
+  updateOne: function(table, objColVals, condition, cb) {
     let queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -77,20 +77,8 @@ const orm = {
 
       cb(result);
     });
-  },
-  delete: function(table, condition, cb) {
-    let queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
-
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
   }
+  
 };
 
 // Export the orm object for the model (cat.js).
