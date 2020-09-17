@@ -1,17 +1,18 @@
 // Import MySQL connection.
-const connection = require("./connection.js");
+const connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
-  let arr = [];
+  const arr = [];
+
   for (let i = 0; i < num; i++) {
     arr.push("?");
   }
+
   return arr.toString();
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
-  let arr = [];
+  const arr = [];
 
   // loop through the keys and push the key/value as a string int arr
   for (let key in ob) {
@@ -31,8 +32,8 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 const orm = {
-  all: function(tableInput, cb) {
-    let queryString = "SELECT * FROM " + tableInput + ";";
+  selectAll: function(tableInput, cb) {
+    const queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -40,7 +41,7 @@ const orm = {
       cb(result);
     });
   },
-  create: function(table, cols, vals, cb) {
+  insertOne: function(table, cols, vals, cb) {
     let queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -60,7 +61,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+
   updateOne: function(table, objColVals, condition, cb) {
     let queryString = "UPDATE " + table;
 
@@ -78,8 +79,6 @@ const orm = {
       cb(result);
     });
   }
-  
 };
 
-// Export the orm object for the model (cat.js).
 module.exports = orm;
