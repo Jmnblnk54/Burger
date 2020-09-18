@@ -1,38 +1,50 @@
-<h1>Burger Devourer!</h1>
-<br>
-<h2>Burgers to be devoured:</h2>
+<header class="page-header">
+    <h1>Burger Devourer!</h1>
+</header>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Burgers to be devoured:</h2>
 
-<h2>Burgers that are devoured!</h2>
+            <ol class="burgerList">
+                {{#each burgers}}
+                {{#unless devoured}}
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+                {{> burgers/burger-block devour=true}}
+                <button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">Devour it!
+                </button>
+                <br>
+                <br>
+                {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+        <div>
+          <div class="col-md-4" id="addburger">
+            <h2>Add a Burger</h2>
+            <form class="create-form">
+              <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="name">
+              </div>
+              <button type="submit">Add Burger</button>
+            </form>
+          </div>
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="devoured">Burger name:</label><br>
-    <input type="text" id="bu" name="name">
-    <br>
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+            <div class="col-md-4">
+              <h2>Burgers devoured:</h2>
+              <div>
+                <ol class="burgerList">
+                  {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devour=false}}
+                    {{/if}}
+                  {{/each}}
+                </ol>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

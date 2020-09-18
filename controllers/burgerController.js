@@ -3,8 +3,9 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
+  // res.json("Hello");
   burger.all(function(data) {
-    const hbsObject = {
+    let hbsObject = {
       burgers: data
     };
     console.log("hbsObject is: ", hbsObject);
@@ -31,7 +32,7 @@ router.put("/api/burgers/:id", function(req, res) {
   burger.update({
     devoured: req.body.devoured
   }, condition, function(result) {
-    if (result.changedRows == 0) {
+    if (result.changedRows === 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
