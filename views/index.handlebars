@@ -1,10 +1,10 @@
-<header class="page-header">
-    <h1>Burger Devourer!</h1>
-</header>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1 navbar-text">Burger Devourer!</span>
+</nav>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm">
             <h2>Burgers to be devoured:</h2>
 
             <ol class="burgerList">
@@ -22,7 +22,7 @@
         </div>
 
         <div>
-          <div class="col-md-4" id="addburger">
+          <div class="col-sm" id="addburger">
             <h2>Add a Burger</h2>
             <form class="create-form">
               <div class="form-group">
@@ -32,19 +32,20 @@
               <button type="submit">Add Burger</button>
             </form>
           </div>
+        </div>
 
-            <div class="col-md-4">
-              <h2>Burgers devoured:</h2>
-              <div>
-                <ol class="burgerList">
-                  {{#each burgers}}
-                    {{#if devoured}}
+        <div class="col-sm">
+          <h2>Burgers devoured:</h2>
+            <div>
+              <ol class="burgerList">
+                {{#each burgers}}
+                  {{#if devoured}}
                     {{> burgers/burger-block devour=false}}
-                    {{/if}}
-                  {{/each}}
-                </ol>
-              </div>
+                  {{/if}}
+                {{/each}}
+              </ol>
             </div>
         </div>
+        
     </div>
 </div>

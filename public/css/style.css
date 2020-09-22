@@ -1,47 +1,53 @@
+.navbar-text {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
 li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
-    }
+}
     
-    .burgers-list {
-        background: #ffd49c
-    }
+.burgers-list {
+    background: #ffd49c
+}
     
-    body {
-        width: 100%;
-        background-color: coral;
-    }
+body {
+    width: 100%;
+    background-color: coral;
+}
     
-    .wrapper {
+.wrapper {
         width: 80%;
         margin: auto;
-    }
+}
     
-    .label {
+.label {
     font-weight: bold;
-    }
+}
     
-    .create-form {
+.create-form {
         padding: 5px;
         background: #ffd49c;
-    }
+}
     
-    .form-group {
+.form-group {
         margin-bottom: 5px;
-    }
+}
     
-    .header {
+.header {
         /* font-size: 3em; */
         font-weight: bold;
-    }
+}
 
-    .section-header {
+.section-header {
         font-size: 2em;;
-    }
+}
     
-    img {
+img {
         max-height: 200px;
         width: auto;
         margin:auto;
-    }
+}
