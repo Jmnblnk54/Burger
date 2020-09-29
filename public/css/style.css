@@ -1,53 +1,26 @@
-.navbar-text {
+.jumbotron {
+    background-image: url("../assets/FAVPNG_burger-cartoon_kKsbR5dH.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color:#FEC208;
+    color: #ffffff;
+    margin-top: 3%;
+  }
+  #newburger {
+    color: #5c5c5c;
+  }
+  #leftside {
+    background-color: rgb(220, 54, 69);
+    color: white;
     text-align: center;
-    width: 100%;
-    display: inline-block;
-}
-
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-}
-    
-.burgers-list {
-    background: #ffd49c
-}
-    
-body {
-    width: 100%;
-    background-color: coral;
-}
-    
-.wrapper {
-        width: 80%;
-        margin: auto;
-}
-    
-.label {
-    font-weight: bold;
-}
-    
-.create-form {
-        padding: 5px;
-        background: #ffd49c;
-}
-    
-.form-group {
-        margin-bottom: 5px;
-}
-    
-.header {
-        /* font-size: 3em; */
-        font-weight: bold;
-}
-
-.section-header {
-        font-size: 2em;;
-}
-    
-img {
-        max-height: 200px;
-        width: auto;
-        margin:auto;
-}
+    font-size: 1.3em;
+  }
+  #rightside {
+    background-color:#CF240A;
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  #devoured {
+    opacity: 50%;
+  }

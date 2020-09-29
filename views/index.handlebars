@@ -1,51 +1,61 @@
-<nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1 navbar-text">Burger Devourer!</span>
-</nav>
-
 <div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <h2>Burgers to be devoured:</h2>
 
-            <ol class="burgerList">
-                {{#each burgers}}
-                {{#unless devoured}}
-
-                {{> burgers/burger-block devour=false}}
-                <button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">Devour it!
-                </button>
-                <br>
-                <br>
-                {{/unless}}
-                {{/each}}
-            </ol>
-        </div>
-
-        <div>
-          <div class="col-sm" id="addburger">
-            <h2>Add a Burger</h2>
+    <div class="jumbotron">
+        <h1>Eat Da Burger!</h1>
+        <p>Create Your Own Burger</p>
+        <br>
+        <h2>Create a Burger or Sandwich</h2>
+        <panel>
             <form class="create-form">
-              <div class="form-group">
-                <label for="ca">Burger Name:</label>
-                <input type="text" id="ca" name="name">
-              </div>
-              <button type="submit">Add Burger</button>
+                <div class="form-group">
+                    <label for="newburger">Name Your Burger</label>
+                    <input type="text" id="newburger" name="burger">
+                    <button type="submit" class="btn btn-danger" id="addburger">
+                        <span class="fa fa-thumbs-up"></span>
+                    </button>
+                </div>
             </form>
-          </div>
-        </div>
+        </panel>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="leftside"><strong>You're Burger is served!</strong>
+                    <p>Have a seat, relax and click the button when you are ready to eat your burger</p>
+                </div>
+                <div class="panel-body">
 
-        <div class="col-sm">
-          <h2>Burgers devoured:</h2>
-            <div>
-              <ol class="burgerList">
-                {{#each burgers}}
-                  {{#if devoured}}
-                    {{> burgers/burger-block devour=false}}
-                  {{/if}}
-                {{/each}}
-              </ol>
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+
+                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                        <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-hand-lizard-o"></span></button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+
+                </div>
             </div>
         </div>
-        
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="rightside"><strong>Looks like you are all done!</strong>
+                    {{!-- <p>Please recycle your wrapper by hitting the recycle button</p> --}}
+                </div>
+                <div class="panel-body" id="devoured">
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                        <hr>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
