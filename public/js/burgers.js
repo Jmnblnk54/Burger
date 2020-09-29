@@ -17,7 +17,7 @@ $(function() {
       });
   });
 
-  $("#eatbutton").on("click", function(event) {
+  $(".eatbutton").on("click", function(event) {
       event.preventDefault();
 
       let id = $(this).data("id");

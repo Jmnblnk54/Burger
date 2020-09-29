@@ -1,16 +1,20 @@
 .jumbotron {
-    background-image: url("../assets/FAVPNG_burger-cartoon_kKsbR5dH.png");
+    background-image: url("../assets/burger.gif");
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
     background-color:#FEC208;
     color: #ffffff;
     margin-top: 3%;
+  }
+
+  .jumbo-text {
+    text-align: center;
   }
   #newburger {
     color: #5c5c5c;
   }
   #leftside {
-    background-color: rgb(220, 54, 69);
+    background-color: #CF240A;
     color: white;
     text-align: center;
     font-size: 1.3em;
