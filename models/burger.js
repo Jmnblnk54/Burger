@@ -4,7 +4,6 @@ let burger = {
     selectAll: function(cb) {
         orm.selectAll("burgers", function(res) {
             cb(res);
-            console.log("Hello World!");
         });
     },
     insertOne: function(cols, vals, cb) {
@@ -18,6 +17,5 @@ let burger = {
             cb(res);
         });
     },
-   
 }
 module.exports = burger;

@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="panel panel-default">
-                <div class="panel-heading" id="leftside"><strong>Which burger would you like to consume?</strong>
+                <div class="panel-heading" id="leftside"><strong>Go ahead and eat the next burger!</strong>
                 </div>
                 <div class="panel-body">
 
@@ -33,7 +33,7 @@
 
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
                         <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-hand-lizard-o"></span></button>
+                            data-newDevoured="{{devour}}"><span>Eat Me!</span></button>
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -45,7 +45,7 @@
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading" id="rightside"><strong>Here's an unneccesary list of burgers you ate!</strong>
-                    {{!-- <p>Please recycle your wrapper by hitting the recycle button</p> --}}
+                   
                 </div>
                 <div class="panel-body" id="devoured">
                     <ul>
